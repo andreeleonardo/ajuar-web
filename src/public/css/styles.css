@@ -1,0 +1,318 @@
+@font-face {
+  font-family: "AirbnbCereal";
+  src: url("../fonts/AirbnbCereal-Medium.ttf");
+  
+}
+
+
+* {
+  font-family: 'AirbnbCereal';
+}
+
+.padding150 {
+  padding: 100px 0 0 0;
+
+}
+
+.titulo {
+  text-align: center;
+  font-size: 26px!important;
+  font-weight: 800!important;
+  margin-bottom: 25px!important;
+}
+
+.mini-titulo {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+/*       navbar    */
+
+.logo {
+  width: 35%;
+}
+
+#ropa:hover,
+#ajuareate:hover, .activo-rojo {
+  color: #F30102!important;
+}
+
+#coleccion:hover, .activo-azul {
+  color: #0001FB!important;
+}
+
+#promo:hover,
+#eventos:hover,
+.activo-amarillo {
+  color: #FBCB00!important;
+}
+
+
+
+.barra {
+  background-color: #eaeaea;
+  padding-top: 20px!important;
+  padding-bottom: 20px!important;
+}
+
+.navbar-nav {
+  border-bottom: solid 2px rgb(187, 187, 187);
+}
+
+.nav-link {
+  color: black;
+  padding: 10px 25px!important;
+}
+
+.col-6 {
+  justify-content: center!important;
+}
+
+.hamburguesa {
+  justify-content: flex-end;
+}
+
+.hamburguesa > svg {
+  margin-left: 10px;
+}
+
+
+/*       header home    */
+
+.header {
+  background-image: url(../images/HomePage1.png);
+  background-repeat: no-repeat;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  min-height: 590px;
+}
+.overlay {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.description {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+.description img {
+  width: 22%;
+}
+
+.description h1 {
+  color: #fff;
+}
+.description p {
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+.description button {
+  background:#fff;
+  color:#000;
+  padding: 10px 30px!important;
+  margin-top: 10px;
+  border-radius: 0;
+  border: 0;
+}
+
+.description button:hover {
+  background:rgb ((211, 211, 211)209, 209, 209);
+  transition: all .3s;
+  color:#fff;
+}
+
+
+/*       camisetas home    */
+
+.modulo img {
+  display: block;
+  margin: auto;
+}
+
+.camisetas p {
+  font-size: 18px;
+  text-align: center!important;
+}
+
+.camiseta-p {
+  margin: 10px 0 0 0;
+  font-weight: 700;
+}
+
+
+/*       #ajuareate home     */
+
+.ajuareate .row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.ajuareate .column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0;
+}
+
+.ajuareate .column img {
+  margin: 0;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/*   ROPA   */
+
+.header-ropa {
+  background-image: url(../images/catalogo/Catalogo4.png);
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: cover;
+  background-position-y: -830px;
+  height: 100%;
+  min-height: 590px;
+}
+
+.ropa-camisetas .titulo p {
+  margin-bottom: 10px;
+}
+
+.linea {
+  border-top: 3px solid #333333;
+  margin: 0;
+}
+
+.carousel-item img {
+  width: 33.1%;
+}
+
+/*   COLECCION   */
+
+.column-header {
+  min-height: 400px; 
+
+}
+
+.column-h1 {
+  color: #fff;
+  z-index: 1;
+}
+
+.column-one {
+  background-image: url(../images/catalogo/de\ la\ roja\ coleccion.jpg);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.column-two {
+  background-image: url(../images/catalogo/PMovil1.png);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+/*   footer   */
+footer {
+  padding: 50px 0;
+  position: absolute;
+  right: 3%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*    MEDIA QUERIES   */
+@media (max-width: 992px) {
+  .modulo {
+    margin-top: 25px!important;
+  }
+  .camisetas .titulo {
+    margin-bottom: 0!important;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .ajuareate .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 991px){
+  .ropa-carusel{
+    max-width: 100%;
+    margin: auto;
+  }
+  .carousel-item img {
+    width: 32.1%;
+    padding-left: 30px;
+}
+}
+
+@media (min-width: 992px) {
+.ropa-carusel{
+  max-width: 970px;
+  margin: auto;
+}
+.carousel-inner {
+  padding-left: 0!important;
+}
+}
+
+@media (min-width: 1200px){
+  .ropa-carusel{
+    max-width: 1160px;
+    margin: auto;
+  }
+  .carousel-inner {
+    padding-left: 29px;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .description img:nth-child(2), 
+  .description img:nth-child(3) {
+    display: none;
+  }
+
+  .description img {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ajuareate .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
