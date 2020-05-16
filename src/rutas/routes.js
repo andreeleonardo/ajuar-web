@@ -6,10 +6,19 @@ router.get('/', indexController.list);
 router.get('/index.html', indexController.list); 
 //router.post('/add', indexController.save); 
 
-const productsController = require('../controllers/ropaController'); 
-router.get('/ropa.html', productsController.list); 
+const ropaController = require('../controllers/ropaController'); 
+router.get('/ropa.html', ropaController.list); 
 
-const productPageController = require('../controllers/coleccionController'); 
-router.get('/coleccion.html', productPageController.list); 
+const coleccionController = require('../controllers/coleccionController'); 
+router.get('/coleccion.html', coleccionController.list); 
+
+const promoController = require('../controllers/promoController'); 
+router.get('/promocion.html', promoController.list); 
+
+const ajuareateController = require('../controllers/ajuareateController'); 
+router.get('/ajuareate.html', ajuareateController.list); 
+
+const eventosController = require('../controllers/eventosController'); 
+router.get('/eventos.html', eventosController.list); 
 
 module.exports=router;

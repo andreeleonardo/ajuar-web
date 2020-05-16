@@ -19,8 +19,8 @@ app.use(myConnection(mysql, {
     host: 'localhost',
     user: 'root', 
     password: '',
-    port: 3306,
-    database: 'database_ajuar'
+    port: 3307,
+    database: 'database_AJUAR'
 }, 'single' ));
 
 //Para entender datos de los formularios
