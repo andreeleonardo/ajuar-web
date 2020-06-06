@@ -2,18 +2,6 @@ CREATE DATABASE database_AJUAR;
 
 USE database_AJUAR; 
 
-CREATE TABLE producto(
-	id_producto INT (10) NOT NULL, 
-	nom_producto VARCHAR (20) NOT NULL, 
-	id_coleccion INT (10) NOT NULL,
-	nom_tipo VARCHAR (20) NOT NULL,
-	precio INT (10) NOT NULL, 
-	inventario BOOLEAN (1) NOT NULL, 
-PRIMARY KEY (id_producto), 
-FOREIGN KEY (id_coleccion) REFERENCES coleccion(id_coleccion),
-FOREIGN KEY (nom_tipo) REFERENCES tipo(nom_tipo)
-); 
-
 CREATE TABLE coleccion(
 	id_coleccion INT (10) NOT NULL, 
 	nom_coleccion VARCHAR (20) NOT NULL, 
@@ -26,6 +14,18 @@ CREATE TABLE tipo(
 id_coleccion INT (10) NOT NULL, 
 PRIMARY KEY (nom_tipo),
 FOREIGN KEY (id_coleccion) REFERENCES coleccion(id_coleccion)
+); 
+
+CREATE TABLE producto(
+	id_producto INT (10) NOT NULL, 
+	nom_producto VARCHAR (20) NOT NULL, 
+	id_coleccion INT (10) NOT NULL,
+	nom_tipo VARCHAR (20) NOT NULL,
+	precio INT (10) NOT NULL, 
+	inventario TINYINT (1) NOT NULL, 
+PRIMARY KEY (id_producto), 
+FOREIGN KEY (id_coleccion) REFERENCES coleccion(id_coleccion),
+FOREIGN KEY (nom_tipo) REFERENCES tipo(nom_tipo)
 ); 
 
 CREATE TABLE cliente(
@@ -66,10 +66,26 @@ PRIMARY KEY (id_compra),
 FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente), 
 FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
 ); 
+ 
+--NUEVO CONTACTO-->
+ CREATE TABLE contact(
+    name VARCHAR (60) NOT NULL,
+    email VARCHAR (60) NOT NULL,
+    comments VARCHAR (200) NOT NULL
+);
 
-CREATE TABLE contacto(
-	c_nombre VARCHAR (20) NOT NULL, 
-c_email VARCHAR (20) NOT NULL, 
-c_comentario VARCHAR (600) NOT NULL,
-PRIMARY KEY (c_nombre, c_email)
-); 
+
+
+DELIMITER //
+CREATE PROCEDURE createProducto(nomproducto_aj VARCHAR (20), idcoleccion_aj  INT (10), nomcoleccion_aj VARCHAR (20),  nomtipo_aj VARCHAR (20), precio_aj INT (10), inventario_aj TINYINT (1))
+
+BEGIN 
+
+DECLARE  fk_id INT; 
+	INSERT IGNORE INTO coleccion( nom_coleccion) VALUES (nomcoleccion_aj);
+	SELECT id_coleccion INTO fk_id FROM coleccion where id_coleccion = idcoleccion_aj;
+INSERT IGNORE INTO tipo (nom_tipo) VALUES (nomtipo_aj); 
+SELECT id_coleccion INTO fk_id FROM coleccion where id_coleccion = idcoleccion_aj && nom_tipo = nomtipo_aj; 
+INSERT INTO producto(nom_producto, id_coleccion, nom_tipo, precio, inventario) VALUES (nomproducto_aj, idcoleccion_aj, nomtipo_aj, precio_aj, inventario_aj); 
+END
+//

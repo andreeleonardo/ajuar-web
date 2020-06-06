@@ -1,89 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Ajuar | Home Page</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-  <script src="https://kit.fontawesome.com/20ff96890d.js" crossorigin="anonymous"></script>
-</head>
-<body>
+<%- include('partials/_header') %>
+<%- include('partials/_nav') %>
 
 
-  <nav class="navbar navbar-expand-md barra">
-    <div class="container">
-      <!-- Logo -->
 
-      <a class="navbar-brand col-3" href="./index.html">
-          <span><img class="logo" src="images/AJUAR__Logo_color_Transparente.png" alt=""></span>
-        </a>
-        <!-- toggler: menú que se expande y colapsa dependiendo de la resolución -->
-        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse hamburguesa col-6" id="main-navigation">
-          <div class="sec-nav">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" id="ropa" href="ropa.html">Ropa</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="coleccion" href="coleccion.html">Colección</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" id="promo" href="promocion.html">Promo</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="ajuareate" href="ajuareate.html">#Ajuareate</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="eventos" href="eventos.html">Eventos</a>
-                </li>
-            </ul>
-          </div>
-        
-        </div><!--collapse-->
-
-        <div class="sec-nav collapse navbar-collapse hamburguesa col-3" id="main-navigation">
-            <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
-              <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
-            </svg>
-          
-            <svg class="bi bi-bag" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M14 5H2v9a1 1 0 001 1h10a1 1 0 001-1V5zM1 4v10a2 2 0 002 2h10a2 2 0 002-2V4H1z" clip-rule="evenodd"/>
-              <path d="M8 1.5A2.5 2.5 0 005.5 4h-1a3.5 3.5 0 117 0h-1A2.5 2.5 0 008 1.5z"/>
-            </svg>
+  <div class="page-header">
+      <div class=" promo-header ">
+        <div class="overlay"></div>
+        <div class="img-chila" >
+        <img src="/images/promos/PromoA.png" alt=""></div>
+        <div class="desc-promo" style="margin-top: 100px;">
+          <br><br>
+          <h1>PROMO DE CUARENTENA</h1>
+          <p>20% de descuento por la cuarentena chafa que todos vivimos. Solo aplica en México con código:<strong> CUARENTONTA20</strong></p>
         </div>
-
-    </div>
-  </nav>
-
-
-  <div class="page-header header-ropa container-fluid">
-      <div class="overlay"></div>
-      <div class="description">
-        <h1>PROMO DE CUARENTENA</h1>
-        <p>20% de descuento por la cuarentena chafa que todos vivimos. Solo aplica en Mexico con codigo:<strong> CUARENTONTA20</strong></p>
       </div>
+    
     </div>
   
   <header class="container-fluid" style="position: relative;">
     <div class="overlay" style="z-index: 1;"></div>
-    <div class="row">
-      <div class="column column-header col-6 column-one">
+    <div class="row" style="height: 500px; overflow: hidden;">
+      <div class="column column-header col-lg-8 col-md-12 column-one">
+        <div class="c1-img"><img src="/images/promos/PromoB.png" alt=""></div>
+        <div class="desc-promo">
         <h1 class="column-h1">NOVATO</h1>
-        <P>Si es tu primer vez comprando y quieres promo usa el codigo: FIRST15</P>
+        <P>Si es tu primer vez comprando y quieres promo usa el código: <strong>FIRST15</strong></P>
       </div>
-      <div class="column column-header col-6 column-two">
-        <h1 class="column-h1">NOMAS PORQUE SI</h1>
-        <p>Nomas porque nos caen bien te damos 5% de descuento con el codigo:<strong> TQM5</strong></p>
+      </div>
+      <div class="column column-header col-lg-4 col-md-12 column-two">
+        <div class="c2-img">
+        <img src="/images/promos/PromoC.png" alt=""></div>
+        <div class="desc-promo">
+        <h1 class="column-h1">NOMÁS PORQUE SÍ</h1>
+        <p>Nomas porque nos caen bien te damos 5% de descuento con el código:<strong> TQM5</strong></p>
+      </div>
       </div>
     </div>
 </header>
@@ -124,39 +74,5 @@
   </div>
 </div>
 
-    <footer class="container">
-      <div class="row">
-      <div class="col-6">
-        <div class="column">
-          <p class="mini-titulo">Necesitas ayuda</p>
-          <p>Mandanos mensaje.</p>
-          <p><strong>ajuarshop@gmail.com</strong></p>
-          <strong><p>+52 (686) 152 19 21</p></strong>
-          <p>Lunes a Viernes de 8:00 am-6:00pm PDT</p>
-        </div>
-      </div>
-      
-      <div class="col-6">
-        <div class="row">
-          <p class="mini-titulo">Ajuar SHOP</p>
-        </div>
-        <div class="row">
-          <div class="column" style="margin-right: 40px;">
-            <p>Quienes somos</p>
-            <p>Trabaja con nosotros</p>
-            <p>Tiendas</p>
-            <p>Artistas</p>
-          </div>
-          <div class="column">
-            <p>Ropa</p>
-            <p>Promo</p>
-            <p>Colección</p>
-            <p>Eventos</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    </footer>
 
-</body> 
-</html>
+<%- include('partials/_footer') %>

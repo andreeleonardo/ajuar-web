@@ -1,0 +1,60 @@
+<%- include('partials/_header') -%>
+<%- include('partials/_nav') -%>   
+   <!-- Page Content -->
+    <div class="container" style="margin-top: 30px;">
+        <div class="row row-carrito">
+            <!-- filter list -->
+
+            <!-- Product -->
+
+            <div class="col-lg-5">
+                <div class="card mt-4 pp-image">
+                    <img class="card-img-top img-fluid"src='/images/Productos/<%=data[0].id_producto%>.png' alt="">
+                </div>
+
+            </div>
+
+            <% if(data){ %>
+            <div class="col-lg-7">
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <form action="/add/<%= data[0].id_producto%>" method="get" class="card-body">
+                            <h3 class="card-title"></h3>
+                            <h1><%= data[0].nom_producto%></h1>
+                            <h4>Primera Colección</h4>
+                            <p class="card-text pp-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta
+                                fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi 
+                                pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
+                               
+                            <div class="producto-info">
+
+                                <div class="pp-precio">
+                                    <p>Precio:</p>
+                                    <h1>$250</h1>
+                                </div>
+
+                                <div class="pp-precio">
+                                    <label for="cars"><p>Talla:</p></label><br>
+                                    <select id="cars">
+                                    <option value="volvo">Small</option>
+                                    <option value="saab">Medium</option>
+                                    <option value="mercedes">Large</option>
+                                    </select>
+                                </div>
+                                <div class="pp-precio">
+                                    <label for="quantity"><p>Cantidad:</p></label><br>
+                                    <input type="number" id="quantity" name="quantity" value="1" min="1" max="5"> 
+                                </div>
+                            </div>
+
+                            <button class="agregar-btn" role="button" type="submit">
+                            <a class="btn btn-info agregar">Agregar a carrito</a></button>
+                       </form>
+                    </div>
+                </div>
+
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <%- include('partials/_footer') -%>

@@ -1,0 +1,53 @@
+    <body>
+      <!-- Navigation -->
+      <!-- fixed-top: sirve para que la barra se quede fija aunque des scroll -->
+      <nav class="navbar navbar-expand-md barra">
+        <div class="container">
+          <!-- Logo -->
+  
+          <a class="navbar-brand col-2" href="../index.html">
+              <span><img class="logo" src="/images/AJUAR__Logo_color_Transparente.png" alt=""></span>
+            </a>
+            <!-- toggler: menú que se expande y colapsa dependiendo de la resolución -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navigation">
+              <svg class="bi bi-list" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 013 11h10a.5.5 0 010 1H3a.5.5 0 01-.5-.5zm0-4A.5.5 0 013 7h10a.5.5 0 010 1H3a.5.5 0 01-.5-.5zm0-4A.5.5 0 013 3h10a.5.5 0 010 1H3a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+  
+            <div class="collapse navbar-collapse col-md-8 col-sm-12 col-xs-12" id="main-navigation">
+              <div class="sec-nav">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" id="ropa" href="/ropa.html">Ropa</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="coleccion" href="/coleccion.html">Colección</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" id="promo" href="/promocion.html">Promo</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="ajuareate" href="/ajuareate.html">#Ajuareate</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="eventos" href="/eventos.html">Eventos</a>
+                    </li>
+                </ul>
+              </div>
+            
+            </div><!--collapse-->
+  
+            <div class="sec-nav collapse navbar-collapse hamburguesa col-2" id="main-navigation">
+              
+                <a class="nav-link icart" href="/cart.html">
+                  <i class="fa fa-shopping-cart fa-lg"></i>
+                  <% if(locals.cart){%>
+                  <span class="badge badge-pill badge-danger summary"><%= locals.cart.totalItems%></span>
+                  <%}%>
+                </a>
+            </div>
+  
+        </div>
+      </nav>
+  <%- messages('messages', locals) %>
